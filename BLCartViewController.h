@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BLCartViewController.h
 //  ShoppingCart
 //
 //  Created by Bennett Lee on 7/11/14.
@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BLCart.h"
 
-@interface ViewController : UIViewController
+@interface BLCartViewController : UIViewController
+
+@property (nonatomic, strong) BLCart *cart;
 
 @end
