@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BLCartItem.h"
 
+// BLPickerview will appear every time the user choose to update quantity on cart
 @protocol BLPickerViewDelegate
 
 - (void)updateCartItemAtIndex:(NSInteger)index withQuantity:(NSInteger)quantity;
@@ -24,6 +25,6 @@
 
 // Show the picker view with inventory and current quantity
 - (void)showWithCartItem:(BLCartItem *)cartItem cellIndex:(NSInteger)index;
-- (void) hide;
+- (void)hide;
 
 @end

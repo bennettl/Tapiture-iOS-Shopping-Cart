@@ -3,19 +3,19 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "cart-2.png",
+      "filename" : "cart_toolbar_noti-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "cart-1.png",
+      "filename" : "cart_toolbar_noti-2.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "cart.png",
+      "filename" : "cart_toolbar_noti.png",
       "scale" : "2x"
     }
   ],

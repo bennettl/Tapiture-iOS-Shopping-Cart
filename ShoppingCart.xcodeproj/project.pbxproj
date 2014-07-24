@@ -8,9 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		C91CC63D1975B50400DEFC82 /* BLCartTotalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C91CC63C1975B50400DEFC82 /* BLCartTotalCell.m */; };
+		C94AF48A197D873B00082EBD /* BLOptionCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C94AF489197D873B00082EBD /* BLOptionCategoryCell.m */; };
 		C957E8561974390D00B7C884 /* BLCart.m in Sources */ = {isa = PBXBuildFile; fileRef = C957E8551974390D00B7C884 /* BLCart.m */; };
 		C957E859197474F200B7C884 /* BLCartItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C957E858197474F200B7C884 /* BLCartItemCell.m */; };
 		C957E85F19749D1300B7C884 /* BLCheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C957E85E19749D1300B7C884 /* BLCheckoutViewController.m */; };
+		C991CECD197EE5960016F9BD /* BLCartBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C991CECC197EE5960016F9BD /* BLCartBarButtonItem.m */; };
+		C991CED3197F16AC0016F9BD /* BLWaterfallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C991CED2197F16AB0016F9BD /* BLWaterfallViewController.m */; };
+		C991CED7197F23120016F9BD /* BLSampleData.m in Sources */ = {isa = PBXBuildFile; fileRef = C991CED6197F23120016F9BD /* BLSampleData.m */; };
+		C991CEDA197F2C530016F9BD /* BLProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C991CED9197F2C530016F9BD /* BLProductCell.m */; };
+		C99C5E77197D88EA007992C3 /* BLProductDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99C5E76197D88EA007992C3 /* BLProductDetailViewController.m */; };
+		C99C5E7A197D8A43007992C3 /* BLProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = C99C5E79197D8A43007992C3 /* BLProduct.m */; };
+		C99C5E7D197D8AFD007992C3 /* BLVariant.m in Sources */ = {isa = PBXBuildFile; fileRef = C99C5E7C197D8AFD007992C3 /* BLVariant.m */; };
+		C99C5E7F197D900B007992C3 /* product.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C99C5E7E197D900B007992C3 /* product.jpeg */; };
+		C99C5E82197D9206007992C3 /* BLOptionDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C99C5E81197D9206007992C3 /* BLOptionDetailCell.m */; };
+		C99C5E85197D926B007992C3 /* BLOptionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C99C5E84197D926B007992C3 /* BLOptionDetailViewController.m */; };
 		C9A12B0C19706E140078ACF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A12B0B19706E140078ACF1 /* Foundation.framework */; };
 		C9A12B0E19706E140078ACF1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A12B0D19706E140078ACF1 /* CoreGraphics.framework */; };
 		C9A12B1019706E140078ACF1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9A12B0F19706E140078ACF1 /* UIKit.framework */; };
@@ -29,6 +40,8 @@
 		C9A12B501970B32E0078ACF1 /* cart_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9A12B4F1970B32E0078ACF1 /* cart_icon.jpg */; };
 		C9A3AE2E1976DC0800FA48E2 /* BLPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A3AE2D1976DC0800FA48E2 /* BLPickerView.m */; };
 		C9CB2ED41975EC9F0052A111 /* pickerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CB2ED31975EC9F0052A111 /* pickerIcon.png */; };
+		C9EAAC9C19803DBE00F35C09 /* BLImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EAAC9B19803DBE00F35C09 /* BLImageCache.m */; };
+		C9EAAC9F198066CB00F35C09 /* BLCartItemCountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EAAC9E198066CB00F35C09 /* BLCartItemCountCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +57,33 @@
 /* Begin PBXFileReference section */
 		C91CC63B1975B50400DEFC82 /* BLCartTotalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCartTotalCell.h; sourceTree = "<group>"; };
 		C91CC63C1975B50400DEFC82 /* BLCartTotalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCartTotalCell.m; sourceTree = "<group>"; };
+		C94AF488197D873B00082EBD /* BLOptionCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLOptionCategoryCell.h; sourceTree = "<group>"; };
+		C94AF489197D873B00082EBD /* BLOptionCategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLOptionCategoryCell.m; sourceTree = "<group>"; };
 		C957E8541974390D00B7C884 /* BLCart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCart.h; sourceTree = "<group>"; };
 		C957E8551974390D00B7C884 /* BLCart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCart.m; sourceTree = "<group>"; };
 		C957E857197474F200B7C884 /* BLCartItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCartItemCell.h; sourceTree = "<group>"; };
 		C957E858197474F200B7C884 /* BLCartItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCartItemCell.m; sourceTree = "<group>"; };
 		C957E85D19749D1300B7C884 /* BLCheckoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCheckoutViewController.h; path = ../BLCheckoutViewController.h; sourceTree = "<group>"; };
 		C957E85E19749D1300B7C884 /* BLCheckoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCheckoutViewController.m; path = ../BLCheckoutViewController.m; sourceTree = "<group>"; };
+		C991CECB197EE5960016F9BD /* BLCartBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCartBarButtonItem.h; sourceTree = "<group>"; };
+		C991CECC197EE5960016F9BD /* BLCartBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCartBarButtonItem.m; sourceTree = "<group>"; };
+		C991CED1197F16AB0016F9BD /* BLWaterfallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLWaterfallViewController.h; path = ../BLWaterfallViewController.h; sourceTree = "<group>"; };
+		C991CED2197F16AB0016F9BD /* BLWaterfallViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLWaterfallViewController.m; path = ../BLWaterfallViewController.m; sourceTree = "<group>"; };
+		C991CED5197F23120016F9BD /* BLSampleData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLSampleData.h; sourceTree = "<group>"; };
+		C991CED6197F23120016F9BD /* BLSampleData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLSampleData.m; sourceTree = "<group>"; };
+		C991CED8197F2C530016F9BD /* BLProductCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLProductCell.h; sourceTree = "<group>"; };
+		C991CED9197F2C530016F9BD /* BLProductCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLProductCell.m; sourceTree = "<group>"; };
+		C99C5E75197D88EA007992C3 /* BLProductDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLProductDetailViewController.h; sourceTree = "<group>"; };
+		C99C5E76197D88EA007992C3 /* BLProductDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLProductDetailViewController.m; sourceTree = "<group>"; };
+		C99C5E78197D8A43007992C3 /* BLProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLProduct.h; sourceTree = "<group>"; };
+		C99C5E79197D8A43007992C3 /* BLProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLProduct.m; sourceTree = "<group>"; };
+		C99C5E7B197D8AFD007992C3 /* BLVariant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLVariant.h; sourceTree = "<group>"; };
+		C99C5E7C197D8AFD007992C3 /* BLVariant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLVariant.m; sourceTree = "<group>"; };
+		C99C5E7E197D900B007992C3 /* product.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = product.jpeg; sourceTree = "<group>"; };
+		C99C5E80197D9206007992C3 /* BLOptionDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLOptionDetailCell.h; sourceTree = "<group>"; };
+		C99C5E81197D9206007992C3 /* BLOptionDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLOptionDetailCell.m; sourceTree = "<group>"; };
+		C99C5E83197D926B007992C3 /* BLOptionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLOptionDetailViewController.h; sourceTree = "<group>"; };
+		C99C5E84197D926B007992C3 /* BLOptionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLOptionDetailViewController.m; sourceTree = "<group>"; };
 		C9A12B0819706E140078ACF1 /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A12B0B19706E140078ACF1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C9A12B0D19706E140078ACF1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,6 +109,10 @@
 		C9A3AE2C1976DC0800FA48E2 /* BLPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLPickerView.h; sourceTree = "<group>"; };
 		C9A3AE2D1976DC0800FA48E2 /* BLPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLPickerView.m; sourceTree = "<group>"; };
 		C9CB2ED31975EC9F0052A111 /* pickerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickerIcon.png; sourceTree = "<group>"; };
+		C9EAAC9A19803DBE00F35C09 /* BLImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLImageCache.h; sourceTree = "<group>"; };
+		C9EAAC9B19803DBE00F35C09 /* BLImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLImageCache.m; sourceTree = "<group>"; };
+		C9EAAC9D198066CB00F35C09 /* BLCartItemCountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCartItemCountCell.h; sourceTree = "<group>"; };
+		C9EAAC9E198066CB00F35C09 /* BLCartItemCountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCartItemCountCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,10 +175,11 @@
 				C9A12B4C19707F230078ACF1 /* Model */,
 				C9A12B4E19707F2F0078ACF1 /* Controller */,
 				C9A12B4D19707F290078ACF1 /* View */,
+				C9A12B1219706E140078ACF1 /* Supporting Files */,
 				C9A12B2319706E140078ACF1 /* Images.xcassets */,
+				C99C5E7E197D900B007992C3 /* product.jpeg */,
 				C9A12B4F1970B32E0078ACF1 /* cart_icon.jpg */,
 				C9CB2ED31975EC9F0052A111 /* pickerIcon.png */,
-				C9A12B1219706E140078ACF1 /* Supporting Files */,
 			);
 			path = ShoppingCart;
 			sourceTree = "<group>";
@@ -148,6 +187,10 @@
 		C9A12B1219706E140078ACF1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C991CED5197F23120016F9BD /* BLSampleData.h */,
+				C991CED6197F23120016F9BD /* BLSampleData.m */,
+				C9EAAC9A19803DBE00F35C09 /* BLImageCache.h */,
+				C9EAAC9B19803DBE00F35C09 /* BLImageCache.m */,
 				C9A12B1A19706E140078ACF1 /* AppDelegate.h */,
 				C9A12B1B19706E140078ACF1 /* AppDelegate.m */,
 				C9A12B1319706E140078ACF1 /* ShoppingCart-Info.plist */,
@@ -179,6 +222,10 @@
 		C9A12B4C19707F230078ACF1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C99C5E78197D8A43007992C3 /* BLProduct.h */,
+				C99C5E79197D8A43007992C3 /* BLProduct.m */,
+				C99C5E7B197D8AFD007992C3 /* BLVariant.h */,
+				C99C5E7C197D8AFD007992C3 /* BLVariant.m */,
 				C957E8541974390D00B7C884 /* BLCart.h */,
 				C957E8551974390D00B7C884 /* BLCart.m */,
 				C9A12B4319706E660078ACF1 /* BLCartItem.h */,
@@ -190,12 +237,22 @@
 		C9A12B4D19707F290078ACF1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C991CED8197F2C530016F9BD /* BLProductCell.h */,
+				C991CED9197F2C530016F9BD /* BLProductCell.m */,
+				C94AF488197D873B00082EBD /* BLOptionCategoryCell.h */,
+				C94AF489197D873B00082EBD /* BLOptionCategoryCell.m */,
+				C99C5E80197D9206007992C3 /* BLOptionDetailCell.h */,
+				C99C5E81197D9206007992C3 /* BLOptionDetailCell.m */,
 				C957E857197474F200B7C884 /* BLCartItemCell.h */,
 				C957E858197474F200B7C884 /* BLCartItemCell.m */,
+				C9EAAC9D198066CB00F35C09 /* BLCartItemCountCell.h */,
+				C9EAAC9E198066CB00F35C09 /* BLCartItemCountCell.m */,
 				C91CC63B1975B50400DEFC82 /* BLCartTotalCell.h */,
 				C91CC63C1975B50400DEFC82 /* BLCartTotalCell.m */,
 				C9A3AE2C1976DC0800FA48E2 /* BLPickerView.h */,
 				C9A3AE2D1976DC0800FA48E2 /* BLPickerView.m */,
+				C991CECB197EE5960016F9BD /* BLCartBarButtonItem.h */,
+				C991CECC197EE5960016F9BD /* BLCartBarButtonItem.m */,
 				C9A12B1D19706E140078ACF1 /* Main.storyboard */,
 			);
 			name = View;
@@ -204,6 +261,12 @@
 		C9A12B4E19707F2F0078ACF1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C991CED1197F16AB0016F9BD /* BLWaterfallViewController.h */,
+				C991CED2197F16AB0016F9BD /* BLWaterfallViewController.m */,
+				C99C5E75197D88EA007992C3 /* BLProductDetailViewController.h */,
+				C99C5E76197D88EA007992C3 /* BLProductDetailViewController.m */,
+				C99C5E83197D926B007992C3 /* BLOptionDetailViewController.h */,
+				C99C5E84197D926B007992C3 /* BLOptionDetailViewController.m */,
 				C9A12B4919707F180078ACF1 /* BLCartViewController.h */,
 				C9A12B4A19707F180078ACF1 /* BLCartViewController.m */,
 				C957E85D19749D1300B7C884 /* BLCheckoutViewController.h */,
@@ -294,6 +357,7 @@
 				C9A12B2419706E140078ACF1 /* Images.xcassets in Resources */,
 				C9A12B1619706E140078ACF1 /* InfoPlist.strings in Resources */,
 				C9A12B501970B32E0078ACF1 /* cart_icon.jpg in Resources */,
+				C99C5E7F197D900B007992C3 /* product.jpeg in Resources */,
 				C9CB2ED41975EC9F0052A111 /* pickerIcon.png in Resources */,
 				C9A12B1F19706E140078ACF1 /* Main.storyboard in Resources */,
 			);
@@ -314,15 +378,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C99C5E7D197D8AFD007992C3 /* BLVariant.m in Sources */,
+				C991CEDA197F2C530016F9BD /* BLProductCell.m in Sources */,
+				C991CED7197F23120016F9BD /* BLSampleData.m in Sources */,
 				C91CC63D1975B50400DEFC82 /* BLCartTotalCell.m in Sources */,
 				C9A3AE2E1976DC0800FA48E2 /* BLPickerView.m in Sources */,
 				C9A12B4B19707F180078ACF1 /* BLCartViewController.m in Sources */,
+				C9EAAC9C19803DBE00F35C09 /* BLImageCache.m in Sources */,
 				C9A12B1C19706E140078ACF1 /* AppDelegate.m in Sources */,
 				C957E859197474F200B7C884 /* BLCartItemCell.m in Sources */,
 				C957E8561974390D00B7C884 /* BLCart.m in Sources */,
+				C991CED3197F16AC0016F9BD /* BLWaterfallViewController.m in Sources */,
+				C94AF48A197D873B00082EBD /* BLOptionCategoryCell.m in Sources */,
+				C991CECD197EE5960016F9BD /* BLCartBarButtonItem.m in Sources */,
+				C9EAAC9F198066CB00F35C09 /* BLCartItemCountCell.m in Sources */,
+				C99C5E85197D926B007992C3 /* BLOptionDetailViewController.m in Sources */,
 				C9A12B1819706E140078ACF1 /* main.m in Sources */,
+				C99C5E82197D9206007992C3 /* BLOptionDetailCell.m in Sources */,
 				C957E85F19749D1300B7C884 /* BLCheckoutViewController.m in Sources */,
+				C99C5E7A197D8A43007992C3 /* BLProduct.m in Sources */,
 				C9A12B4519706E660078ACF1 /* BLCartItem.m in Sources */,
+				C99C5E77197D88EA007992C3 /* BLProductDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

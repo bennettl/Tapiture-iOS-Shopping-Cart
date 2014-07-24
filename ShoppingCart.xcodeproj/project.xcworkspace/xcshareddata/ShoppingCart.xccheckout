@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1BF75504-8A9A-4775-A8B3-D36AB0384B30</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ShoppingCart</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8BDB6575-3277-49DF-A8F7-D7A4A71A35C9</key>
+		<string>ssh://ops.tapiture.com:7999/mob/bl-shopping-cart.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ShoppingCart.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8BDB6575-3277-49DF-A8F7-D7A4A71A35C9</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://ops.tapiture.com:7999/mob/bl-shopping-cart.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8BDB6575-3277-49DF-A8F7-D7A4A71A35C9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8BDB6575-3277-49DF-A8F7-D7A4A71A35C9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ShoppingCart</string>
+		</dict>
+	</array>
+</dict>
+</plist>

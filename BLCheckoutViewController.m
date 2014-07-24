@@ -9,12 +9,15 @@
 #import "BLCheckoutViewController.h"
 
 @interface BLCheckoutViewController () <UIWebViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end
 
 @implementation BLCheckoutViewController
+
+#pragma mark Initialization
 
 - (id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder: aDecoder];
@@ -23,7 +26,6 @@
     }
     return self;
 }
-
 
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -47,6 +49,6 @@
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    NSLog(@"error %@", error);
+//    NSLog(@"error %@", error);
 }
 @end

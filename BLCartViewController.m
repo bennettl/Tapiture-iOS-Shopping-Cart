@@ -9,123 +9,153 @@
 #import "BLCartViewController.h"
 #import "BLCartItem.h"
 #import "BLCartItemCell.h"
+#import "BLCartItemCountCell.h"
 #import "BLCartTotalCell.h"
 #import "BLPickerView.h"
 #import "BLCheckoutViewController.h"
 
 @interface BLCartViewController () <UITableViewDelegate, UITableViewDataSource, BLPickerViewDelegate, UIScrollViewDelegate>
-
     @property (weak, nonatomic) IBOutlet UITableView *tableView;
     @property (nonatomic, strong) BLPickerView *pickerView;
     @property (nonatomic, strong) BLCartTotalCell *totalCell;
-
+@property (nonatomic, strong) NSMutableDictionary *cachedImages;
 @end
 
 @implementation BLCartViewController
 
+#pragma mark Initialization
+
 - (id)initWithCoder:(NSCoder *)aDecoder{
     self = [super initWithCoder: aDecoder];
     if (self) {
-        _cart           = [[BLCart alloc] init];
-        _pickerView     = [[BLPickerView alloc] init];
-        _pickerView.delegate = self;
+        _cart                   = [BLCart sharedCart];
+        _pickerView             = [[BLPickerView alloc] init];
+        _pickerView.delegate    = self;
+        _cachedImages           = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
 
-
+// When view is loaded
 - (void)viewDidLoad{
     [super viewDidLoad];
-    
-//    self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
     [self.view addSubview:self.pickerView];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
 
 #pragma mark - Table view data source
 
+// Return the number of sections.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    // Return the number of sections.
     return 2;
 }
 
+// Return the number of rows in each section.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    // Return the number of rows in each section.
     if (section == 0){
-        return self.cart.items.count;
+        return self.cart.items.count; // BLCartItemCells
     } else{
-        return 2;
+        return 3; // BLCartItemCountCell, BLCartTotalCell, and checkoutCell
     }
 }
 
+// Return cell at index path
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    // Section 0: Cart cells
     if (indexPath.section == 0){
+        // Section 0: Cart cells
+        
         static NSString *cartCellIdentifier = @"cartCell";
-
+        
+        // Deque or instantiate a BLCartItemCell
         BLCartItemCell *cell = [tableView dequeueReusableCellWithIdentifier:cartCellIdentifier];
         
         if (cell == nil) {
             cell = [[BLCartItemCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cartCellIdentifier];
-//            [cell.removeBtn addTarget:self action:@selector(removeBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
-//            [cell.quantityBtn addTarget:self action:@selector(quantityBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
         }
         
-        // Grab the cart item from cart and set the cell properties
+        // Grab the cart item from cart
         BLCartItem *cartItem                    = [self.cart.items objectAtIndex:indexPath.row];
+        // Set the cell properties
         cell.title.text                         = cartItem.title;
+        cell.price.text                         = [NSString stringWithFormat:@"$ %.2f", [cartItem totalPrice]];
+        cell.quantityBtn.tag                    = indexPath.row; // quantityBtn keeps track on which cell it resides in via tag property
         [cell.quantityBtn setTitle:[NSString stringWithFormat:@"%i", cartItem.quantity] forState:UIControlStateNormal];
+        // Styling for quantityBtn
         cell.quantityBtn.backgroundColor        = [UIColor whiteColor];
         cell.quantityBtn.layer.borderColor      = [UIColor colorWithRed:236.0f/255.0f green:240.0f/255.0f blue:241.0f/255.0f alpha:1.0f].CGColor;
         cell.quantityBtn.layer.borderWidth      = 1.0f;
         cell.quantityBtn.layer.cornerRadius     = 5.0f;
         
-        cell.price.text                         = [NSString stringWithFormat:@"$ %.2f", [cartItem totalPrice]];
-        NSData *image_data                      = [[NSData alloc] initWithContentsOfURL:cartItem.image];
-        cell.imgView.image                      = [UIImage imageWithData:image_data];
+        // Handle images. Get back from cache if image exist, else retrieve it from web
+//        NSString *imageIdentifier = [NSString stringWithFormat:@"IMAGE_%@", cartItem.title];
         
-        
-        // Buttons will keep track of cell index
-        cell.quantityBtn.tag                    = indexPath.row;
-        
+//        if ([self.cachedImages objectForKey:imageIdentifier] != nil){
+//            cell.imgView.image = [self.cachedImages valueForKey:imageIdentifier];
+//        } else{
+//            char const * s = [imageIdentifier UTF8String];
+//            dispatch_queue_t queue = dispatch_queue_create(s, 0);
+//
+//            dispatch_async(queue, ^{
+//                NSData *image_data  = [[NSData alloc] initWithContentsOfURL:cartItem.image];
+//                UIImage *image  = [UIImage imageWithData:image_data];
+//                
+//                // Return back into main queue
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    [self.cachedImages setValue:image forKey:imageIdentifier];
+                    cell.imgView.image = cartItem.image;
+//                });
+//            });
+//        }
         return cell;
 
     } else if (indexPath.section == 1){
         // Section 1: Car total/Checkout Cell
-        
+       
         if (indexPath.row == 0){
+            // BLCartItemCountCell
+            static NSString *cartItemCountIdentifier = @"cartItemCountCell";
+
+            // Deque or instantiate a BLCartItemCountCell
+            BLCartItemCountCell *cell =  [tableView dequeueReusableCellWithIdentifier:cartItemCountIdentifier];
+            
+            if (cell == nil) {
+                cell = [[BLCartItemCountCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cartItemCountIdentifier];
+            }
+            
+            // Set cell property
+            cell.count.text = [NSString stringWithFormat:@"%i", [self.cart totalItems]];
+            
+            return cell;
+            
+        } else if (indexPath.row == 1){
+            // BLCartTotalCell
             static NSString *cartTotalIdentifier = @"cartTotalCell";
-            // Carttotal
+            
+            // Deque or instantiate a BLCartTotalCell
             BLCartTotalCell *cell = [tableView dequeueReusableCellWithIdentifier:cartTotalIdentifier];
             
             if (cell == nil) {
                 cell = [[BLCartTotalCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cartTotalIdentifier];
             }
             
-            // Set the total amount for cart
+            // Set cell property
             cell.totalAmount.text = [NSString stringWithFormat:@"$ %.2f", [self.cart totalAmount]];
             
             self.totalCell = cell; // set the total cell's value
             
             return cell;
 
-        } else{
+        } if (indexPath.row == 2){
+            // CheckoutCell
             static NSString *cartCheckoutIdentifier = @"checkoutCell";
 
-            // Checkout
+            // Deque or instantiate a checkoutCell
            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cartCheckoutIdentifier];
             
             if (cell == nil) {
                 cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cartCheckoutIdentifier];
             }
+            
             return cell;
         }
     }
@@ -136,7 +166,7 @@
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
    
-    // Can't edit anything in "Summary" section
+    // Only allow editing in the first section
     return (indexPath.section == 0) ? YES : NO;
 }
 
@@ -167,11 +197,7 @@
     [cell setSelected:NO];
 }
 
-// Update quantity button has been pressed
-- (IBAction)removeBtnPressed:(UIButton *)sender {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:sender.tag inSection:0];
-    [self removeItemAtIndexPath:indexPath];
-}
+#pragma mark Actions
 
 // Update quantity button has been pressed
 - (IBAction)quantityBtnPressed:(UIButton *)button {
@@ -184,6 +210,7 @@
     [self.pickerView showWithCartItem:cartItem cellIndex:indexPath.row];
 }
 
+#pragma mark Instance Methods
 
 // Re-calcuate subtotal of view
 - (void)reloadTotal{
@@ -194,8 +221,6 @@
 }
 
 #pragma mark - Scroll View Delegate
-
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
   //  NSLog(@"hey %i", scrollView.contentOffset.y);
     [self.pickerView hide];
@@ -223,55 +248,22 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     
     // Update cart quantity, item total, and cart total
-    BLCartItem *cartItem = [self.cart.items objectAtIndex:index];
-    BLCartItemCell *cartItemCell = (BLCartItemCell *) [self.tableView cellForRowAtIndexPath:indexPath];
-    [cartItemCell.quantityBtn setTitle:[NSString stringWithFormat:@"%i", quantity] forState:UIControlStateNormal];
-    cartItemCell.price.text = [NSString stringWithFormat:@"$ %.2f", [cartItem totalPrice]];
-    [self reloadTotal];
-    [self.cart saveToDisk];
+    BLCartItem *cartItem            = [self.cart.items objectAtIndex:index];
+    BLCartItemCell *cartItemCell    = (BLCartItemCell *) [self.tableView cellForRowAtIndexPath:indexPath];
+    [cartItemCell.quantityBtn setTitle:[NSString stringWithFormat:@"%li", (long)quantity] forState:UIControlStateNormal];
+    cartItemCell.price.text         = [NSString stringWithFormat:@"$ %.2f", [cartItem totalPrice]];
+    [self reloadTotal]; // reload total cell
+    [self.cart saveToDisk]; // save cart to disk
 }
 
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     // Set BLCheckoutViewController's checkout url to shopify's url
-    NSLog(@"prepare %@", [self.cart checkoutURL]);
     if ([segue.identifier isEqual: @"checkoutSegue"]){
         BLCheckoutViewController *bcvc = [segue destinationViewController];
         bcvc.url = [self.cart checkoutURL];
     }
-
 }
-
-
-
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a story board-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-
- */
 
 @end

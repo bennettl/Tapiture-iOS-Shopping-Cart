@@ -7,20 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BLProduct.h"
+#import "BLVariant.h"
 
 @interface BLCartItem : NSObject
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *product_id;
-@property (nonatomic, strong) NSString *variant_id;
-@property (nonatomic, strong) NSURL *image;
+@property (nonatomic, strong) UIImage *image;
 @property int quantity;
 @property int inventory;
 @property double unit_price;
-
+@property long productId;
+@property long variantId;
 
 // Transforms an NSArray of JSON into an NSArray of BLCartItem objects
 + (NSMutableArray *)arrayWithJSON:(NSArray *)JSON;
+// Initialize with BLProduct and BLVariant
+- (instancetype)initWithProduct:(BLProduct *)product andVariant:(BLVariant *)variant;
 // Intialize cart item with JSON dictionary
 - (instancetype)initWithJSON:(NSDictionary *)JSON;
 // Returns the JSON dictionary of the object

@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UIButton *quantityBtn;
-@property (weak, nonatomic) IBOutlet UIButton *removeBtn;
 @property (weak, nonatomic) IBOutlet UILabel *price;
 
 @end

@@ -13,7 +13,6 @@
 
 @interface BLPickerView () <UIPickerViewDataSource, UIPickerViewDelegate>
 
-
     // Data for picker view
     @property (nonatomic, strong) NSMutableArray *data;
 
@@ -66,7 +65,7 @@
         // Toolbar
         UIView *toolbar                     = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 43.0f)];
         toolbar.backgroundColor             = [UIColor colorWithRed: 238.0/255.0f green: 238.0/255.0f blue: 238.0/255.0f alpha:1];
-        _doneButton                         = [[UIButton alloc] initWithFrame:CGRectMake(240.0f, 3.0f, 80.0f, 43.0f)];
+        _doneButton                         = [[UIButton alloc] initWithFrame:CGRectMake(240.0f, 0, 80.0f, 46.0f)];
         [_doneButton setTitle:@"Done" forState:UIControlStateNormal];
         [_doneButton setTitleColor: [UIColor colorWithRed:92.0/255.0f green:92.0/255.0f blue:92.0/255.0f alpha:1] forState:UIControlStateNormal];
         [_doneButton setTitleColor: [UIColor colorWithRed:92.0/255.0f green:92.0/255.0f blue:92.0/255.0f alpha:1] forState:UIControlStateSelected];
@@ -75,6 +74,10 @@
 //        _doneButton.backgroundColor = [UIColor blueColor];
         // Listen for when done button is pressed
         [_doneButton addTarget:self action:@selector(doneBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
+        // Add top and bottom border to toolbar
+        toolbar.layer.borderColor = [UIColor colorWithRed:227.0/255.0f green:227.0/255.0f blue:227.0/255.0f alpha:1.0f].CGColor;
+        toolbar.layer.borderWidth = 1;
+        
         
         // Pickerview
         _picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 43.0f, screenWidth, 162.0f)];
@@ -113,6 +116,8 @@
 // Show the picker by providing inventory count and current quantity
 - (void)showWithCartItem:(BLCartItem *)cartItem cellIndex:(NSInteger)index{
     
+    NSLog(@"showing with cart item %@ and inventory %i", cartItem.title, cartItem.inventory);
+    
     // Keeps track of the row index
     self.doneButton.tag =  index;
 
@@ -136,7 +141,7 @@
 
 // Hide picker view
 - (void) hide{
-    NSLog(@"hidding frame");
+  //  NSLog(@"hidding frame");
     [UIView animateWithDuration:0.5f animations:^{
         self.frame = self.hiddenFrame;
     }];

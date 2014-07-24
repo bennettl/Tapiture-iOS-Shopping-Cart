@@ -14,6 +14,9 @@
 
 @property (nonatomic, strong) NSMutableArray *items;
 
+// Singleton
++ (instancetype) sharedCart;
+
 // Intialize cart wtih an array of JSON
 //- (instancetype)initWithJSON:(NSArray *)JSON;
 //Add item to cart
@@ -22,6 +25,8 @@
 - (void)updateItemAtIndex:(NSInteger)index withQuantity:(NSInteger)quantity;
 // Returns the total amount for the cart
 - (double)totalAmount;
+// Returns the total number of items
+- (int)totalItems;
 // Returns the URL for checkout with checkout items appended as parameters
 - (NSURL *)checkoutURL;
 // Save cart to disk
