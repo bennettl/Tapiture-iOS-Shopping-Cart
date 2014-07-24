@@ -15,10 +15,13 @@
 #import "BLCheckoutViewController.h"
 
 @interface BLCartViewController () <UITableViewDelegate, UITableViewDataSource, BLPickerViewDelegate, UIScrollViewDelegate>
-    @property (weak, nonatomic) IBOutlet UITableView *tableView;
-    @property (nonatomic, strong) BLPickerView *pickerView;
-    @property (nonatomic, strong) BLCartTotalCell *totalCell;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) BLPickerView *pickerView;
+@property (nonatomic, strong) BLCartItemCountCell *itemCountCell;
+@property (nonatomic, strong) BLCartTotalCell *totalCell;
 @property (nonatomic, strong) NSMutableDictionary *cachedImages;
+
 @end
 
 @implementation BLCartViewController
@@ -122,6 +125,8 @@
                 cell = [[BLCartItemCountCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cartItemCountIdentifier];
             }
             
+            self.itemCountCell = cell; // keep a reference to BLCartItemCountCell
+
             // Set cell property
             cell.count.text = [NSString stringWithFormat:@"%i", [self.cart totalItems]];
             
@@ -141,7 +146,7 @@
             // Set cell property
             cell.totalAmount.text = [NSString stringWithFormat:@"$ %.2f", [self.cart totalAmount]];
             
-            self.totalCell = cell; // set the total cell's value
+            self.totalCell = cell; // keep a reference to BLCartTotalCell
             
             return cell;
 
@@ -212,8 +217,12 @@
 
 #pragma mark Instance Methods
 
-// Re-calcuate subtotal of view
-- (void)reloadTotal{
+// Re-calcuate subtotal of view and number of items
+- (void)refreshSummary{
+    // Set item count if it's not nil
+    if (self.itemCountCell){
+        self.itemCountCell.count.text = [NSString stringWithFormat:@"%i", [self.cart totalItems]];
+    }
     // Set total if not total cell is not nil
     if (self.totalCell){
         self.totalCell.totalAmount.text = [NSString stringWithFormat:@"$ %.2f", [self.cart totalAmount]];
@@ -221,8 +230,9 @@
 }
 
 #pragma mark - Scroll View Delegate
+
+// Hide BLPickerView whenever the user starts scrolling
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-  //  NSLog(@"hey %i", scrollView.contentOffset.y);
     [self.pickerView hide];
 }
 
@@ -234,8 +244,8 @@
     [self.cart.items removeObjectAtIndex:indexPath.row];
     // Delete the row from view
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    // Update total
-    [self reloadTotal];
+    // Refersh summary
+    [self refreshSummary];
     // Save cart changes to disk
     [self.cart saveToDisk];
 }
@@ -252,8 +262,10 @@
     BLCartItemCell *cartItemCell    = (BLCartItemCell *) [self.tableView cellForRowAtIndexPath:indexPath];
     [cartItemCell.quantityBtn setTitle:[NSString stringWithFormat:@"%li", (long)quantity] forState:UIControlStateNormal];
     cartItemCell.price.text         = [NSString stringWithFormat:@"$ %.2f", [cartItem totalPrice]];
-    [self reloadTotal]; // reload total cell
-    [self.cart saveToDisk]; // save cart to disk
+    // Refresh summary
+    [self refreshSummary];
+    // Save cart to disk
+    [self.cart saveToDisk];
 }
 
 #pragma mark - Segue

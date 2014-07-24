@@ -224,7 +224,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ag6-nM-AOQ"/>
+                    <navigationItem key="navigationItem" title="Checkout" id="ag6-nM-AOQ"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="spinner" destination="KnD-HY-GfC" id="Ghs-Qh-NuT"/>

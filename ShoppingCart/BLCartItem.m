@@ -53,7 +53,7 @@
 // Initialize with BLProduct
 - (instancetype)initWithProduct:(BLProduct *)product andVariant:(BLVariant *)variant{
     if (self = [super init]){
-        _title          = product.title;
+        _title          = [NSString stringWithFormat:@"%@ | %@", product.title, [variant description]]; // combination of product title and options in variant
         _productId      = product.productId;
         _variantId      = variant.variantId;
         _image          = product.image;

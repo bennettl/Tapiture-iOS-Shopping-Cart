@@ -51,7 +51,7 @@
         BLVariant *variant = [self.product.variants objectAtIndex:i];
         if (variant.inventory > 0 ){
             self.selectedVariant  = variant;
-            return;
+            break;
         }
     }
     
@@ -70,7 +70,6 @@
 
 // Customer setter. Setting the selected variant will reload the option category tableview and readjust the price
 - (void)setSelectedVariant:(BLVariant *)variant{
-    
     // Reload the option category tableview with the selected variant
     _selectedVariant = variant;
     [self.optionCategoryTableView reloadData];
@@ -137,14 +136,24 @@
 - (IBAction)productActionBtnPressed:(UIButton *)button {
     // Base on the tag of the production action button, either add to cart or notify user
     if (self.productActionBtn.tag == TAG_PRODUCT_ACTION_ADD_TO_CART){
-        BLCartItem *cartItem = [[BLCartItem alloc] initWithProduct:self.product andVariant:self.selectedVariant];
-        [[BLCart sharedCart] addItem:cartItem];
-        NSLog(@"%@", self.navigationItem.rightBarButtonItem);
-        // [((BLCartBarButtonItem *)self.navigationItem.rightBarButtonItem) refresh];
+        [self addToCart];
     } else if (self.productActionBtn.tag == TAG_PRODUCT_ACTION_NOTIFY){
         [self notifyOutOfStock];
     }
         
+}
+
+// Add item to cart and display notification
+- (void)addToCart{
+    BLCartItem *cartItem = [[BLCartItem alloc] initWithProduct:self.product andVariant:self.selectedVariant];
+    [[BLCart sharedCart] addItem:cartItem];
+    [((BLCartBarButtonItem *)self.navigationItem.rightBarButtonItem) refresh];
+    UIAlertView *addToCartAlert = [[UIAlertView alloc] initWithTitle:@"Added"
+                                                                message:[NSString stringWithFormat:@"\"%@\" added to cart!", cartItem.title]
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"Ok"
+                                                      otherButtonTitles:nil];
+    [addToCartAlert show];
 }
 
 // Display alertview and  use Back In STock API to notify user when item is back in stock

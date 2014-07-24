@@ -26,16 +26,19 @@
         if (count == 0){
             // No count
             [_button setBackgroundImage:[UIImage imageNamed:@"CartNavigationItem"] forState:UIControlStateNormal]; // no red circle
+            [_button setTitle:@"" forState:UIControlStateNormal]; // empty string
         } else if (count < 10){
             // Single digit
             [_button setBackgroundImage:[UIImage imageNamed:@"CartNavigationItemNoti"] forState:UIControlStateNormal]; // with red circle
             [_button setTitleEdgeInsets:UIEdgeInsetsMake(-19, 0, 0, 6)];
+            [_button setTitle:[NSString stringWithFormat:@"%i", count] forState:UIControlStateNormal];
         } else{
             // Double digits
             [_button setBackgroundImage:[UIImage imageNamed:@"CartNavigationItemNoti"] forState:UIControlStateNormal]; // with red circle
             [_button setTitleEdgeInsets:UIEdgeInsetsMake(-19, 0, 0, 3)];
+            [_button setTitle:[NSString stringWithFormat:@"%i", count] forState:UIControlStateNormal];
+
         }
-        [_button setTitle:[NSString stringWithFormat:@"%i", count] forState:UIControlStateNormal];
         [_button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         
         [self setCustomView:_button];

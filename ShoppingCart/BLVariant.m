@@ -36,7 +36,6 @@
 
 // Intialize cart item with JSON dictionary
 - (instancetype)initWithJSON:(NSDictionary *)JSON{
-    
     if (self = [super init]){
         _productId  = [JSON[KEY_PRODUCT_ID] longValue];
         _variantId  = [JSON[KEY_VARIANT_ID] longValue];
@@ -63,7 +62,7 @@
 
 // Use for debugging purposes
 -(NSString *)description{
-    return [NSString stringWithFormat:@"Variant %@", [self.options componentsJoinedByString:@", "]];
+    return [NSString stringWithFormat:@"%@", [self.options componentsJoinedByString:@", "]];
 }
 
 @end

@@ -21,7 +21,7 @@
     dispatch_once(&onceToken, ^{
         NSArray *productsJSON = @[
                                       @{ @"id": [NSNumber numberWithLong:178500921],
-                                         @"title": @"Led Zeppelin T-Shirt In Navy",
+                                         @"title": @"Saints Footbar T-Shirt 1967",
                                          @"vendor": @"Junk Food Clothing",
                                          @"images": @[ @"http://cdn.shopify.com/s/files/1/0209/4636/products/JUNKFOOD_N3944-7798_FULL.jpg?v=1384799842"],
                                          @"options": @[ @"Size", @"Color"],
@@ -342,7 +342,7 @@
                                         @"inventory":  [NSNumber numberWithInt:4],
                                         @"title": @"Texas Flag on Reclaimed Wood",
                                         @"unit_price": @"399.00",
-                                        @"image": @"http://s3tapcdn-a.akamaihd.net/images/55x55/41/c7/a1/ac/4a73aaf556590dd44fefb6.jpg"
+                                        @"image": @"http://s3tapcdn-a.akamaihd.net/images/50x50/bd/57/13/44/50191c7af6d71dd33f7a1ae7.jpg"
                                         },
                                     @{
                                         @"product_id": [NSNumber numberWithLong:196400877],
