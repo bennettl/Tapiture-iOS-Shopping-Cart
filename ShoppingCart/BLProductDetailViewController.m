@@ -66,6 +66,13 @@
 
 }
 
+// Before the view appears, refresh the cart icon with the appropriate count
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [((BLCartBarButtonItem *)self.navigationItem.rightBarButtonItem) refresh];
+}
+
+
 #pragma mark Setters
 
 // Customer setter. Setting the selected variant will reload the option category tableview and readjust the price

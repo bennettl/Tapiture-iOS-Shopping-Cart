@@ -37,7 +37,6 @@
 		C9A12B3719706E140078ACF1 /* ShoppingCartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A12B3619706E140078ACF1 /* ShoppingCartTests.m */; };
 		C9A12B4519706E660078ACF1 /* BLCartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A12B4419706E660078ACF1 /* BLCartItem.m */; };
 		C9A12B4B19707F180078ACF1 /* BLCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A12B4A19707F180078ACF1 /* BLCartViewController.m */; };
-		C9A12B501970B32E0078ACF1 /* cart_icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9A12B4F1970B32E0078ACF1 /* cart_icon.jpg */; };
 		C9A3AE2E1976DC0800FA48E2 /* BLPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A3AE2D1976DC0800FA48E2 /* BLPickerView.m */; };
 		C9CB2ED41975EC9F0052A111 /* pickerIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = C9CB2ED31975EC9F0052A111 /* pickerIcon.png */; };
 		C9EAAC9C19803DBE00F35C09 /* BLImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EAAC9B19803DBE00F35C09 /* BLImageCache.m */; };
@@ -105,7 +104,6 @@
 		C9A12B4419706E660078ACF1 /* BLCartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCartItem.m; sourceTree = "<group>"; };
 		C9A12B4919707F180078ACF1 /* BLCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCartViewController.h; path = ../BLCartViewController.h; sourceTree = "<group>"; };
 		C9A12B4A19707F180078ACF1 /* BLCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCartViewController.m; path = ../BLCartViewController.m; sourceTree = "<group>"; };
-		C9A12B4F1970B32E0078ACF1 /* cart_icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cart_icon.jpg; sourceTree = "<group>"; };
 		C9A3AE2C1976DC0800FA48E2 /* BLPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLPickerView.h; sourceTree = "<group>"; };
 		C9A3AE2D1976DC0800FA48E2 /* BLPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLPickerView.m; sourceTree = "<group>"; };
 		C9CB2ED31975EC9F0052A111 /* pickerIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pickerIcon.png; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 				C9A12B1219706E140078ACF1 /* Supporting Files */,
 				C9A12B2319706E140078ACF1 /* Images.xcassets */,
 				C99C5E7E197D900B007992C3 /* product.jpeg */,
-				C9A12B4F1970B32E0078ACF1 /* cart_icon.jpg */,
 				C9CB2ED31975EC9F0052A111 /* pickerIcon.png */,
 			);
 			path = ShoppingCart;
@@ -356,7 +353,6 @@
 			files = (
 				C9A12B2419706E140078ACF1 /* Images.xcassets in Resources */,
 				C9A12B1619706E140078ACF1 /* InfoPlist.strings in Resources */,
-				C9A12B501970B32E0078ACF1 /* cart_icon.jpg in Resources */,
 				C99C5E7F197D900B007992C3 /* product.jpeg in Resources */,
 				C9CB2ED41975EC9F0052A111 /* pickerIcon.png in Resources */,
 				C9A12B1F19706E140078ACF1 /* Main.storyboard in Resources */,

@@ -274,7 +274,7 @@
                                                     <color key="textColor" red="0.1734099472" green="0.51449983020000001" blue="0.11759625" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cart_icon.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Md2-ZR-S8x">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="product.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="Md2-ZR-S8x">
                                                     <rect key="frame" x="19" y="24" width="55" height="55"/>
                                                 </imageView>
                                                 <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Vg-nX-GoG">
@@ -491,7 +491,6 @@
     </scenes>
     <resources>
         <image name="CartNavigationItemNoti" width="50" height="50"/>
-        <image name="cart_icon.jpg" width="150" height="150"/>
         <image name="pickerIcon.png" width="7" height="14"/>
         <image name="product.jpeg" width="660" height="660"/>
     </resources>
