@@ -137,8 +137,7 @@
     [encoder encodeObject:self.items forKey:@"items"];
 }
 
-# pragma mark - NSKeyArchiver
-
+# pragma mark - Helper
 
 // Returns document directory with cart.plist filename
 + (NSString *) path{

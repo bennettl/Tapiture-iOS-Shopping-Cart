@@ -13,12 +13,15 @@
 #import "BLProductDetailViewController.h"
 #import "BLCartBarButtonItem.h"
 #import "BLCartViewController.h"
+#import "BLImageCache.h"
 
 @interface BLWaterfallViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) NSArray *products;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) UIActivityIndicatorView *spinner;
+@property (nonatomic, strong) BLImageCache *imageCache;
+@property int loadedCells; // use for spinner (when enough cells loaded, stop animating
 
 @end
 
@@ -31,6 +34,10 @@
 
     // Grab list of products from BLSampleData
     self.products = [BLSampleData productsData];
+    // Set the cache
+    self.imageCache = [BLImageCache sharedCache];
+    
+    self.loadedCells = 0; // no cells are loaded yet
     
     // Setup spinner
     self.spinner                            = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -72,24 +79,39 @@
     cell.backgroundColor    = [UIColor whiteColor];
     
     BLProduct *product = [self.products objectAtIndex:indexPath.row];
-    // Handle images. Get back from cache if image exist, else retrieve it from web
-//    NSString *imageIdentifier = [NSString stringWithFormat:@"IMAGE_%@", product.title];
-    
-    // If product image doesn't exist, download it asynchronously
+
+    // Handles loading images
     if (product.image != nil){
+        // If BLProduct already has an image, use it
         cell.imgView.image = product.image;
+        [self.spinner stopAnimating];
+    }  else if ([self.imageCache imageExistForProductWithID:product.productId]){
+        // Image exist in cache, use it
+       // NSLog(@"image EXIST for product with product ID %s" , __PRETTY_FUNCTION__ );
+        UIImage *image      =  [self.imageCache imageForProductWithID:product.productId];
+        cell.imgView.image  = image;
+        product.image       = image;
+        [self stopSpinner]; // stop spinner if enough cells have loaded
     } else{
+        // Image doesn't exist in cache, need to download it asychronously
+       // NSLog(@"image doesnt exist, downloading them now %s" , __PRETTY_FUNCTION__ );
+
         cell.imgView.image = nil;
+        
         //  Download images asynchronously to advoid blocking the main queue
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSData *image_data  = [[NSData alloc] initWithContentsOfURL:product.imageURL];
             UIImage *image      = [UIImage imageWithData:image_data];
-    
+            NSData *imageJPG = UIImageJPEGRepresentation(image, 0.8f);
+            
+            // Save the image to cache and set it as a property of product image
+            [self.imageCache saveImage:imageJPG withProductID:product.productId];
+            product.image       = image;
+
+            // Go back to the main thread to set the images
             dispatch_async(dispatch_get_main_queue(), ^{
-//                [self.cachedImages setValue:image forKey:imageIdentifier];
-                product.image = image;
-                cell.imgView.image = image;
-                [self.spinner stopAnimating]; // stop animating spinner once an image is loaded
+                cell.imgView.image  = image;
+                [self stopSpinner]; // stop spinner if enough cells have loaded
             });
         });
         
@@ -138,6 +160,18 @@
         BLProductDetailViewController *pdvc = (BLProductDetailViewController *) segue.destinationViewController;
         pdvc.product = (BLProduct *)sender;
     }
+}
+
+#pragma mark UIHelper
+- (void)stopSpinner{
+    // Cell is fully loaded, increment the count
+    self.loadedCells++;
+    
+    // If more than 5 cells have loaded, we can stop the spinner
+    if (self.loadedCells > 5){
+        [self.spinner stopAnimating];
+    }
+
 }
 
 

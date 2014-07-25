@@ -8,13 +8,14 @@
 
 #import "BLImageCache.h"
 
-@interface BLImageCache()
-    @property (nonatomic, strong) NSMutableDictionary *imageDict; //key-image name 
+@interface BLImageCache() <NSCoding>
+
 @end
 
 @implementation BLImageCache
 
-// Singleton
+#pragma mark Initialization
+
 + (instancetype) sharedCache{
     
     static BLImageCache *_sharedCache;
@@ -28,33 +29,64 @@
     
 }
 
-// Initalizer
-- (id)init{
-    self = [super init];
-    if (self) {
-        _imageDict = [[NSMutableDictionary alloc] init];
-    }
-    return self;
+
+# pragma mark Image Handling functions
+- (void)saveImage:(NSData *)image withProductID:(long)productID{
+    // Save the file
+//    NSData *imagePNG    = UIImageJPEGRepresentation(image, 0.8f);
+    
+    // Get the image path with productIDStr appended to it
+    NSString *productIDStr  = [NSString stringWithFormat:@"%li.jpg", productID];
+    NSString *imageFilePath = [[BLImageCache imagesDirectory] stringByAppendingPathComponent:productIDStr]; //Add the file name
+        
+    [image writeToFile:imageFilePath atomically:YES]; //Write the file
 }
 
-// Returns document directory with images path
-+ (NSString *) path{
+// Whether or not product exists at path
+- (BOOL)imageExistForProductWithID:(long)productID{
+    NSString *productIdStr  = [NSString stringWithFormat:@"%li.jpg", productID];
+    NSString *productPath   = [[BLImageCache imagesDirectory] stringByAppendingPathComponent:productIdStr];
+    return [[NSFileManager defaultManager] fileExistsAtPath:productPath isDirectory:NO];
+}
+
+// Returns UIImage for product with ID from the images directory
+- (UIImage *)imageForProductWithID:(long)productID{
+    NSString *productIdStr  = [NSString stringWithFormat:@"%li.jpg", productID];
+    NSString *productPath   = [[BLImageCache imagesDirectory] stringByAppendingPathComponent:productIdStr];
+    NSData *imageData       = [NSData dataWithContentsOfFile:productPath];
+    return [UIImage imageWithData:imageData];
+}
+
+
+
+#pragma mark - NSCoding
+
+
+# pragma mark - Path functions
+
+// Returns document directory with cart.plist filename
++ (NSString *) imageCachePath{
     NSArray *paths                  = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory    = [paths objectAtIndex:0];
-    NSString *full_path             = [documentsDirectory stringByAppendingPathComponent: @"images"];
+    NSString *full_path             = [documentsDirectory stringByAppendingPathComponent: @"imageCache.plist"];
     
     return full_path;
 }
 
-// Save images to disk
-- (void)saveToDisk {
-    for (NSString *imageName in self.imageDict) {
-        NSString *imagePath = [[BLImageCache path] stringByAppendingPathComponent:imageName];
-        UIImage *image = [self.imageDict objectForKey:imageName];
-        NSData *imageData = UIImageJPEGRepresentation(image, 0.8f);
-        [imageData writeToFile:imagePath atomically:YES];
-        
+// Returns document directory with images path
++ (NSString *) imagesDirectory{
+    NSArray *paths                  = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory    = [paths objectAtIndex:0];
+    NSString *imagesDirectory             = [documentsDirectory stringByAppendingPathComponent: @"images/"];
+    
+    NSError *error;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:imagesDirectory]){
+        [[NSFileManager defaultManager] createDirectoryAtPath:imagesDirectory withIntermediateDirectories:NO attributes:nil error:&error];
     }
+
+    return imagesDirectory;
 }
+
+
 
 @end
