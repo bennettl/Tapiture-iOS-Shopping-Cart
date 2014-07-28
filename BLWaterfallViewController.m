@@ -14,6 +14,8 @@
 #import "BLCartBarButtonItem.h"
 #import "BLCartViewController.h"
 #import "BLImageCache.h"
+#import "BLShopifyMutipass.h"
+#import <AFNetworking/AFNetworking.h>
 
 @interface BLWaterfallViewController () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -31,6 +33,26 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    NSMutableDictionary *customerData = [@{ @"email": @"bennettl@usc.edu" } mutableCopy];
+    
+    // BLShopifyMutipass
+    BLShopifyMutipass *mp   = [[BLShopifyMutipass alloc] init];
+    NSString *token         =  [mp generateToken:customerData];
+    
+    NSLog(@"token is %@", token);
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"token": token};
+    [manager POST:@"http://tapiture.myshopify.com/account/login/multipass"
+       parameters:parameters
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
+    // BLShopifyMutipass
 
     // Grab list of products from BLSampleData
     self.products = [BLSampleData productsData];

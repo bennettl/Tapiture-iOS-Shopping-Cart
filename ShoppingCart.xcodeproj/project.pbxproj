@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1BAD82A1921743BF9082A50B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DB1AF4E78D34AFBBA18D8C7 /* libPods.a */; };
 		C91CC63D1975B50400DEFC82 /* BLCartTotalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C91CC63C1975B50400DEFC82 /* BLCartTotalCell.m */; };
 		C94AF48A197D873B00082EBD /* BLOptionCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C94AF489197D873B00082EBD /* BLOptionCategoryCell.m */; };
 		C957E8561974390D00B7C884 /* BLCart.m in Sources */ = {isa = PBXBuildFile; fileRef = C957E8551974390D00B7C884 /* BLCart.m */; };
 		C957E859197474F200B7C884 /* BLCartItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C957E858197474F200B7C884 /* BLCartItemCell.m */; };
 		C957E85F19749D1300B7C884 /* BLCheckoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C957E85E19749D1300B7C884 /* BLCheckoutViewController.m */; };
+		C98A32241982CF630015B41A /* BLShopifyMutipass.m in Sources */ = {isa = PBXBuildFile; fileRef = C98A32231982CF630015B41A /* BLShopifyMutipass.m */; };
+		C98A32261982E75C0015B41A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C98A32251982E75C0015B41A /* Security.framework */; };
+		C98A32291982FE190015B41A /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C98A32281982FE190015B41A /* NSData+Base64.m */; };
+		C98A322C19830DD60015B41A /* BBAES.m in Sources */ = {isa = PBXBuildFile; fileRef = C98A322B19830DD60015B41A /* BBAES.m */; };
+		C98A322F198324850015B41A /* NSString+sha256.m in Sources */ = {isa = PBXBuildFile; fileRef = C98A322E198324850015B41A /* NSString+sha256.m */; };
 		C991CECD197EE5960016F9BD /* BLCartBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C991CECC197EE5960016F9BD /* BLCartBarButtonItem.m */; };
 		C991CED3197F16AC0016F9BD /* BLWaterfallViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C991CED2197F16AB0016F9BD /* BLWaterfallViewController.m */; };
 		C991CED7197F23120016F9BD /* BLSampleData.m in Sources */ = {isa = PBXBuildFile; fileRef = C991CED6197F23120016F9BD /* BLSampleData.m */; };
@@ -54,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A724CACFC044068AA4BE069 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		5DB1AF4E78D34AFBBA18D8C7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91CC63B1975B50400DEFC82 /* BLCartTotalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCartTotalCell.h; sourceTree = "<group>"; };
 		C91CC63C1975B50400DEFC82 /* BLCartTotalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCartTotalCell.m; sourceTree = "<group>"; };
 		C94AF488197D873B00082EBD /* BLOptionCategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLOptionCategoryCell.h; sourceTree = "<group>"; };
@@ -64,6 +72,15 @@
 		C957E858197474F200B7C884 /* BLCartItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCartItemCell.m; sourceTree = "<group>"; };
 		C957E85D19749D1300B7C884 /* BLCheckoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLCheckoutViewController.h; path = ../BLCheckoutViewController.h; sourceTree = "<group>"; };
 		C957E85E19749D1300B7C884 /* BLCheckoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BLCheckoutViewController.m; path = ../BLCheckoutViewController.m; sourceTree = "<group>"; };
+		C98A32221982CF630015B41A /* BLShopifyMutipass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLShopifyMutipass.h; sourceTree = "<group>"; };
+		C98A32231982CF630015B41A /* BLShopifyMutipass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLShopifyMutipass.m; sourceTree = "<group>"; };
+		C98A32251982E75C0015B41A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C98A32271982FE190015B41A /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		C98A32281982FE190015B41A /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		C98A322A19830DD60015B41A /* BBAES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBAES.h; sourceTree = "<group>"; };
+		C98A322B19830DD60015B41A /* BBAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBAES.m; sourceTree = "<group>"; };
+		C98A322D198324850015B41A /* NSString+sha256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+sha256.h"; sourceTree = "<group>"; };
+		C98A322E198324850015B41A /* NSString+sha256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+sha256.m"; sourceTree = "<group>"; };
 		C991CECB197EE5960016F9BD /* BLCartBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCartBarButtonItem.h; sourceTree = "<group>"; };
 		C991CECC197EE5960016F9BD /* BLCartBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCartBarButtonItem.m; sourceTree = "<group>"; };
 		C991CED1197F16AB0016F9BD /* BLWaterfallViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BLWaterfallViewController.h; path = ../BLWaterfallViewController.h; sourceTree = "<group>"; };
@@ -118,9 +135,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98A32261982E75C0015B41A /* Security.framework in Frameworks */,
 				C9A12B0E19706E140078ACF1 /* CoreGraphics.framework in Frameworks */,
 				C9A12B1019706E140078ACF1 /* UIKit.framework in Frameworks */,
 				C9A12B0C19706E140078ACF1 /* Foundation.framework in Frameworks */,
+				1BAD82A1921743BF9082A50B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +163,7 @@
 				C9A12B3019706E140078ACF1 /* ShoppingCartTests */,
 				C9A12B0A19706E140078ACF1 /* Frameworks */,
 				C9A12B0919706E140078ACF1 /* Products */,
+				2A724CACFC044068AA4BE069 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,10 +179,12 @@
 		C9A12B0A19706E140078ACF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C98A32251982E75C0015B41A /* Security.framework */,
 				C9A12B0B19706E140078ACF1 /* Foundation.framework */,
 				C9A12B0D19706E140078ACF1 /* CoreGraphics.framework */,
 				C9A12B0F19706E140078ACF1 /* UIKit.framework */,
 				C9A12B2A19706E140078ACF1 /* XCTest.framework */,
+				5DB1AF4E78D34AFBBA18D8C7 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -184,6 +206,12 @@
 		C9A12B1219706E140078ACF1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C98A322D198324850015B41A /* NSString+sha256.h */,
+				C98A322E198324850015B41A /* NSString+sha256.m */,
+				C98A32271982FE190015B41A /* NSData+Base64.h */,
+				C98A32281982FE190015B41A /* NSData+Base64.m */,
+				C98A322A19830DD60015B41A /* BBAES.h */,
+				C98A322B19830DD60015B41A /* BBAES.m */,
 				C991CED5197F23120016F9BD /* BLSampleData.h */,
 				C991CED6197F23120016F9BD /* BLSampleData.m */,
 				C9EAAC9A19803DBE00F35C09 /* BLImageCache.h */,
@@ -227,6 +255,8 @@
 				C957E8551974390D00B7C884 /* BLCart.m */,
 				C9A12B4319706E660078ACF1 /* BLCartItem.h */,
 				C9A12B4419706E660078ACF1 /* BLCartItem.m */,
+				C98A32221982CF630015B41A /* BLShopifyMutipass.h */,
+				C98A32231982CF630015B41A /* BLShopifyMutipass.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -279,9 +309,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9A12B3A19706E150078ACF1 /* Build configuration list for PBXNativeTarget "ShoppingCart" */;
 			buildPhases = (
+				A04A683051034007AA2FD768 /* Check Pods Manifest.lock */,
 				C9A12B0419706E140078ACF1 /* Sources */,
 				C9A12B0519706E140078ACF1 /* Frameworks */,
 				C9A12B0619706E140078ACF1 /* Resources */,
+				42707A6A2E8B4AFA88F6796C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -369,12 +401,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		42707A6A2E8B4AFA88F6796C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A04A683051034007AA2FD768 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C9A12B0419706E140078ACF1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98A32241982CF630015B41A /* BLShopifyMutipass.m in Sources */,
 				C99C5E7D197D8AFD007992C3 /* BLVariant.m in Sources */,
+				C98A322F198324850015B41A /* NSString+sha256.m in Sources */,
 				C991CEDA197F2C530016F9BD /* BLProductCell.m in Sources */,
 				C991CED7197F23120016F9BD /* BLSampleData.m in Sources */,
 				C91CC63D1975B50400DEFC82 /* BLCartTotalCell.m in Sources */,
@@ -388,9 +455,11 @@
 				C94AF48A197D873B00082EBD /* BLOptionCategoryCell.m in Sources */,
 				C991CECD197EE5960016F9BD /* BLCartBarButtonItem.m in Sources */,
 				C9EAAC9F198066CB00F35C09 /* BLCartItemCountCell.m in Sources */,
+				C98A322C19830DD60015B41A /* BBAES.m in Sources */,
 				C99C5E85197D926B007992C3 /* BLOptionDetailViewController.m in Sources */,
 				C9A12B1819706E140078ACF1 /* main.m in Sources */,
 				C99C5E82197D9206007992C3 /* BLOptionDetailCell.m in Sources */,
+				C98A32291982FE190015B41A /* NSData+Base64.m in Sources */,
 				C957E85F19749D1300B7C884 /* BLCheckoutViewController.m in Sources */,
 				C99C5E7A197D8A43007992C3 /* BLProduct.m in Sources */,
 				C9A12B4519706E660078ACF1 /* BLCartItem.m in Sources */,
@@ -518,6 +587,7 @@
 		};
 		C9A12B3B19706E150078ACF1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A724CACFC044068AA4BE069 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -534,6 +604,7 @@
 		};
 		C9A12B3C19706E150078ACF1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A724CACFC044068AA4BE069 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
