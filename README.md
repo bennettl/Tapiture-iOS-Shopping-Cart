@@ -1,4 +1,5 @@
 # Tapiture iOS Shopping Cart
+### By Bennett Lee
 
 The “Tapiture iOS Shopping Cart” provides users with a seamless shopping experience within the Tapiture iOS application. Users now have the ability to select different options of a product (size, color, material, etc.), add products to a local shopping cart, and update or remove cart items.
 
@@ -21,7 +22,7 @@ The following is a list of the most important features implemented in “Tapitur
 * If an option is “Out of Stock”, user can tap the option to be notified when product is back in stock.
 
 ## Back In Stock Notification
-	* Placeholder code is embedded to integrate Tapiture’s shopping cart with “Back In Stock API”
+* Placeholder code is embedded to integrate Tapiture’s shopping cart with “Back In Stock API”
 
 ## Shopping Cart
 * Persistent storage of shopping cart data on device. If user exits the Tapiture application, their cart information will still be saved on their local devices.
