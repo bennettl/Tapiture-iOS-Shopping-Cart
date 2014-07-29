@@ -7,6 +7,7 @@
 //
 
 #import "BLCheckoutViewController.h"
+#import "BLCart.h"
 
 @interface BLCheckoutViewController () <UIWebViewDelegate>
 
@@ -43,12 +44,18 @@
 
 #pragma mark - UIWebViewDelegate
 
-// Stop animation after web view loaded
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
-    [self.spinner stopAnimating];
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+  //  NSLog(@"error %@", error);
 }
 
--(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-//    NSLog(@"error %@", error);
+// Stop animation after web view loaded
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+//    // Make sure the final destination is checkoutURL (first destination will be Shopify's multipass login)
+//    if (![self.url isEqual:[[BLCart sharedCart] checkoutURL]]){
+//        self.url = [[BLCart sharedCart] checkoutURL];
+//        NSURLRequest *request = [NSURLRequest requestWithURL:self.url];
+//        [self.webView loadRequest:request];
+        [self.spinner stopAnimating];
+//    }
 }
 @end
