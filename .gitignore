@@ -1,2 +1,10 @@
 ShoppingCart/ShopifyMultipass.h
 ShoppingCart/ShopifyMultipass.m
+
+
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
