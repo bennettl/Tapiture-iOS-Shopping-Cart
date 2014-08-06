@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "ShopifyMultipass.h"
 
 @implementation AppDelegate
 
@@ -15,17 +14,6 @@
 {
     
     // Override point for customization after application launch.
-    
-    
-//    NSMutableDictionary *customerData = [@{ @"email": @"bennettl@usc.edu" } mutableCopy];
-    NSDictionary *customerDict = @{ @"email": @"blee908@yahoo.com",
-                            @"remote_ip": @"64.183.67.138",
-                            @"identifier": @"511158",
-                            @"return_to": @"https://shop.tapiture.com/cart?utm=tapiture.com",
-                            };
-    
-    ShopifyMultipass *key = [[ShopifyMultipass alloc] init];
-    [key loginForCustomer:customerDict];
     
     return YES;
 }
