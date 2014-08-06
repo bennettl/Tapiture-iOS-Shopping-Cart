@@ -10,6 +10,10 @@ The “Tapiture iOS Shopping Cart” provides users with a seamless shopping exp
 
 Note: This application includes the ENTIRE user flow (from waterfall -> product -> shopping cart -> checkout page).
 
+### Product Flow Overview
+
+![Alt text](Shopping-Cart-Flow.png)
+
 The following is a list of the most important features implemented in “Tapiture iOS Shopping Cart”:
 
 ### ProductDetailView Integration
@@ -34,8 +38,5 @@ The following is a list of the most important features implemented in “Tapitur
 * Displays total item count and subtotal
 * Checkout: Displays a web view with Shopify’s checkout webpage
 
-### Product Flow Overview
-
-![Alt text](Shopping-Cart-Flow.png)
 
 
