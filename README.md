@@ -1,12 +1,14 @@
 # Tapiture iOS Shopping Cart
 #### By Bennett Lee
 
+
 ### Demo
 
 ![Alt text](demo.gif)
 
+
 ### Description
-The “Tapiture iOS Shopping Cart” provides users with a seamless shopping experience within the Tapiture iOS application. Users now have the ability to select different options of a product (size, color, material, etc.), add products to a local shopping cart, and update or remove cart items.
+**Tapiture iOS Shopping Cart** provides users with a seamless shopping experience within the Tapiture iOS application. Users now have the ability to select different options of a product (size, color, material, etc.), add products to a local shopping cart, and update or remove cart items.
 
 Note: This application includes the ENTIRE user flow (from waterfall -> product -> shopping cart -> checkout page).
 
